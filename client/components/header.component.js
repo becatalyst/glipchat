@@ -23,7 +23,7 @@ import GlobalStyles from '../styles/global.styles';
 const styles = {
   css: {
     background: 'none',
-    border: 'none',
+    border: '5px',
     boxShadow: 'none',
   },
 

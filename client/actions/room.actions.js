@@ -18,6 +18,17 @@ export const setCurrentRoom = id => (dispatch, getState) => {
     return success();
   }
 
+Meteor.call('sendRoomEmail', id, (error) => {
+  if (error) {
+    return dispatch({
+      type: constants.ROOM_ERROR,
+      error,
+    });
+  }
+  return success();
+});
+
+
   Meteor.call('grantRoomAccess', id, (error) => {
     if (error) {
       return dispatch({

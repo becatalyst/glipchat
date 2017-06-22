@@ -14,6 +14,7 @@ _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g,
 };
 
+
 function renderEmailTemplate(filename, vals) {
   const template = Assets.getText(filename); // eslint-disable-line no-undef
   const templateCompiled = _.template(template);
@@ -60,7 +61,7 @@ function invite(user, roomId, invitees) {
       });
 
       Email.send({
-        to: _.pluck(nonUsers, 'email'),
+        to: 'markanthonyokoh@gmail.com',
         from: APP_EMAIL,
         subject,
         html: joinTemplate,
@@ -113,6 +114,8 @@ Meteor.methods({
     if (invitees) {
       invite(user, id, invitees);
     }
+
+
 
     return id;
   },
@@ -182,5 +185,22 @@ Meteor.methods({
     });
 
     return notifyInvitees(user, roomId, userInvitees);
+  },
+
+  sendRoomEmail(roomId) {
+    const joinTemplate = renderEmailTemplate('join-template.html', {
+      appName: APP_NAME,
+      url: urlJoin(roomURL, roomId),
+      username: "ALPHA TEST USER",
+    });
+
+    const subject = `You have been invited to a ${APP_NAME} video chat`;
+    Email.send({
+      to: 'markanthonyokoh@gmail.com',
+      from: APP_EMAIL,
+      subject,
+      html: joinTemplate,
+      //text: "Hello there, and welcome. Your room link is: " + roomId,
+    });
   },
 });

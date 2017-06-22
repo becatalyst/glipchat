@@ -39,6 +39,11 @@ const styles = {
       textOverflow: 'ellipsis',
     },
   },
+
+  centerText:{
+    color: 'white',
+    fontSize: 24,
+  }
 };
 
 export class FirstOverlayComponent extends PureComponent {
@@ -53,31 +58,15 @@ export class FirstOverlayComponent extends PureComponent {
                   GlobalStyles.cell,
                   styles.invite.cell.css]}
                 className="text-right"
-              >You are the only one here.
-              </div>
-              <div
-                style={[
-                  GlobalStyles.cell,
-                  styles.invite.cell.css]} className="text-left"
               >
-                <RaisedButton
-                  label="Invite people"
-                  secondary
-                  onTouchTap={this.props.action}
-                />
               </div>
+
             </div>
             <div>
-              <div className="text-center">
-                {'Share the permanent link. Bookmark and come back anytime.'}
-              </div>
-              <div
-                style={[
-                  GlobalStyles.table,
-                  GlobalStyles.inset,
-                  styles.linkUrl.css]}
-              >
-                {this.props.linkUrl}
+              <div className="text-center" style={[styles.centerText]}>
+              <a href="mailto:name@testtest.com?subject=DAW%20jam%20lesson&body=Join%20ROOM%20{this.props.linkUrl}">EMAIL US THE LINK BELLOW - CLICK HERE</a>
+              <br/>
+                {'Then another user will join the room shortly for your lesson.'}
               </div>
             </div>
           </div>

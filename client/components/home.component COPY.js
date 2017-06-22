@@ -6,9 +6,6 @@ import Radium from 'radium';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import FontIcon from 'material-ui/FontIcon';
-import IconButton from 'material-ui/IconButton';
-import AVVideoCall from 'material-ui/svg-icons/AV/video-call';
 import React from 'react';
 import { APP_NAME, COMPANY, GITHUB_URL, DOWNLOAD_URLS } from '../../lib/config';
 import * as Actions from '../actions/actions';
@@ -37,16 +34,6 @@ const styles = {
       fontSize: '144px',
     },
   },
-
-  largeIcon: {
-    width: 100,
-    height: 100,
-    color: 'black',
-    display: 'flex',
-  },
-    sloganText:{
-      color: 'black',
-    }
 };
 
 export class HomeComponent extends React.Component {
@@ -78,36 +65,32 @@ export class HomeComponent extends React.Component {
           <HeaderComponent showMenuIconButton={true} />
           <div>
             <div className="col-xs-12 text-center">
-              <h1 style={[styles.title.css]}>{"/ DAW jam /"}</h1>
+              <h1 style={[styles.title.css]}>{APP_NAME}</h1>
               <br />
 
-        <h1 style={styles.sloganText}>______________________
-        <br />
-          <br />
+        <h1>
               A new way of learning music
           <br />
             A new way of earning from music
             <br />
-        </h1>
 
+            </h1>
               <FlatButton
                 onClick={this.createRoom}
                 label="Call DAW User"
                 secondary
-                style={{ marginBottom: '10px' }}
+                style={{ marginBottom: '50px' }}
               />
 
               <br />
 
-              <IconButton
-              iconStyle={styles.largeIcon}
-              style={styles.large}
-              onClick={this.createRoom}
-              secondary
-              style={{ marginBottom: '50px' }}
-              >
-              <AVVideoCall />
-              </IconButton>
+              <FloatingActionButton
+                onClick={this.createRoom}
+                label="2"
+                secondary
+                style={{ marginBottom: '50px' }}
+              />
+              <br />
 
             </div>
           </div>
@@ -117,9 +100,6 @@ export class HomeComponent extends React.Component {
     );
   }
 }
-
-
-
 
 HomeComponent.propTypes = {
   dispatch: PropTypes.func.isRequired,
