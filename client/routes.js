@@ -1,5 +1,7 @@
+import React from 'react';
 import { analytics } from 'meteor/okgrow:analytics';
-import { browserHistory } from 'react-router';
+//import { browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import Browser from 'bowser';
 import * as Actions from './actions/actions';
 import AppComponent from './components/app.component';
@@ -8,6 +10,11 @@ import HomeMobileComponent from './components/home-mobile.component';
 import NotFoundComponent from './components/not-found.component';
 import RoomComponent from './components/room.component';
 import store from './stores/store';
+
+import AppContainer from '../imports/ui/containers/AppContainer.jsx';
+import MainContainer from '../imports/ui/containers/MainContainer.jsx';
+import SignupPage from '../imports/ui/pages/SignupPage.jsx';
+import LoginPage from '../imports/ui/pages/LoginPage.jsx';
 
 // track current room with a subscription for auto-rerouting
 // don't trust components to handle this routing
@@ -29,13 +36,25 @@ const currentRoomSubscription = store.subscribe(() => {
   }
 });
 
+export const renderRoutes = () => (
+  <Router history={browserHistory}>
+    <Route path="login" component={LoginPage}/>
+    <Route path="signup" component={SignupPage}/>
+    <Route path="/" component={AppContainer}>
+      <IndexRoute component={MainContainer}/>
+    </Route>
+  </Router>
+);
+
 // route configuration
 export const routeConfig = [{
   path: '/',
-  component: AppComponent,
+  component: AppContainer,
+  //component: AppComponent,
   indexRoute: {
-    component: (Browser.mobile || Browser.tablet) ?
-      HomeMobileComponent : HomeComponent,
+    component: MainContainer,
+      //component: (Browser.mobile || Browser.tablet) ?
+        //HomeMobileComponent : HomeComponent,
   },
   onEnter: (nextState, replaceState) => {
     analytics.page('home');
@@ -70,7 +89,17 @@ export const routeConfig = [{
       });
     },
   }],
-}, {
+},
+{
+  path: '/login',
+  component: LoginPage,
+},
+{
+  path: '/signup',
+  component: SignupPage,
+},
+
+{
   path: '*',
   component: NotFoundComponent,
   onEnter: () => {

@@ -80,8 +80,9 @@ export class HomeComponent extends React.Component {
             <div className="col-xs-12 text-center">
               <h1 style={[styles.title.css]}>{"/ DAW jam /"}</h1>
               <br />
+          <div id="target"></div>
 
-        <h1 style={styles.sloganText}>______________________
+      <h1 style={styles.sloganText}>______________________
         <br />
           <br />
               A new way of learning music
@@ -93,7 +94,7 @@ export class HomeComponent extends React.Component {
               <FlatButton
                 onClick={this.createRoom}
                 label="Call DAW User"
-                secondary
+
                 style={{ marginBottom: '10px' }}
               />
 
@@ -103,7 +104,7 @@ export class HomeComponent extends React.Component {
               iconStyle={styles.largeIcon}
               style={styles.large}
               onClick={this.createRoom}
-              secondary
+          
               style={{ marginBottom: '50px' }}
               >
               <AVVideoCall />

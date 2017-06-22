@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { APP_ICON } from '../../lib/config';
 import Notifications from '../../lib/notifications';
 
-const API_KEY = Meteor.settings.google.apiKey;
+const API_KEY = 'Blah';//Meteor.settings.google.apiKey;
 const GCM_ENDPOINT = 'https://fcm.googleapis.com/fcm/send';
 
 export const sendNotifications = (ids, notification) => {
