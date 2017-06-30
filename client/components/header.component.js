@@ -317,34 +317,7 @@ export class HeaderComponent extends Component {
       ];
     }
 
-    if (!!user && !!user.services && !!user.services.google) {
-      notificationDropdown = notifications ? (
-        <NotificationDropdownComponent
-          notifications={notifications}
-          markAllNotificationsRead={this.markAllNotificationsRead}
-        />
-      ) : '';
-
-      profileDropdown = (
-        <ProfileDropdownComponent
-          user={user}
-          logout={this.logout}
-        />
-      );
-
-      profileButtons = (
-        <div style={[GlobalStyles.table]}>
-          {notificationDropdown}
-          {profileDropdown}
-        </div>
-      );
-    } else {
-      loginButton = (<FlatButton
-        label="Login with Google"
-        onTouchTap={this.loginWithGoogle}
-      />);
-    }
-
+  
     let drawer = '';
 
     if (!!user && mobile) {

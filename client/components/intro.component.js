@@ -34,18 +34,9 @@ const styles = {
 export class IntroComponent extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.loginAsGuest = this.loginAsGuest.bind(this);
-    this.loginWithGoogle = this.loginWithGoogle.bind(this);
+
   }
 
-  loginAsGuest() {
-    // UserActions.loginAsGuest();
-    this.props.dispatch(Actions.loginAsGuest());
-  }
-
-  loginWithGoogle() {
-    this.props.dispatch(Actions.loginWithGoogle());
-  }
 
   render() {
     const { user } = this.props;
@@ -59,19 +50,6 @@ export class IntroComponent extends React.PureComponent {
         <div className="text-center" style={[GlobalStyles.cell]}>
           <h1 style={[styles.title.css]}>{APP_NAME}</h1>
           <br />
-          <RaisedButton
-            onTouchTap={this.loginWithGoogle}
-            label="Sign in with Google"
-            secondary
-            style={{ marginBottom: '20px' }}
-          />
-          <br />
-          <RaisedButton
-            onTouchTap={this.loginAsGuest}
-            label="Continue as guest"
-            secondary
-            style={{ marginBottom: '50px' }}
-          />
         </div>
       </div>
     );

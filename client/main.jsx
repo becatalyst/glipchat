@@ -3,9 +3,9 @@ import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 
 // add render routes function
-import { renderRoutes } from './routes.js'
+//import { renderRoutes } from './routes.js'
 
 // render routes after DOM has loaded
-Meteor.startup(() => {
-  render(renderRoutes(), document.getElementById('target'));
-});
+// Meteor.startup(() => {
+//   render(renderRoutes(), document.getElementById('target'));
+// });

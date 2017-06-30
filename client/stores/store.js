@@ -1,6 +1,6 @@
 // TODO: import Notifications from '../../lib/notifications';
 import { _ } from 'meteor/underscore';
-import { AccountsGuest } from 'meteor/artwells:accounts-guest';
+//import { AccountsGuest } from 'meteor/artwells:accounts-guest';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Meteor } from 'meteor/meteor';
 import { persistStore } from 'redux-persist';
@@ -32,12 +32,12 @@ const store = createStore(
 );
 
 // force/unforce login depending on browser
-AccountsGuest.enabled = true;
-if (!Browser.mobile && !Browser.tablet) {
-  AccountsGuest.forced = true;
-} else {
-  AccountsGuest.forced = false;
-}
+// AccountsGuest.enabled = false;
+// if (!Browser.mobile && !Browser.tablet) {
+//   AccountsGuest.forced = true;
+// } else {
+//   AccountsGuest.forced = false;
+// }
 
 // add persistence to store
 persistStore(store, { storage: localForage });

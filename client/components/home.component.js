@@ -49,6 +49,18 @@ const styles = {
     }
 };
 
+// import { createContainer } from 'meteor/react-meteor-data';
+// import MainPage from '../pages/MainPage.jsx';
+//
+// export default MainContainer = createContainer(({params}) => {
+//   const currentUser = Meteor.user();
+//   return {
+//     currentUser,
+//   };
+// }, MainPage);
+
+
+
 export class HomeComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -90,7 +102,8 @@ export class HomeComponent extends React.Component {
             A new way of earning from music
             <br />
         </h1>
-
+            { Meteor.userId() !== null ?
+              <div>
               <FlatButton
                 onClick={this.createRoom}
                 label="Call DAW User"
@@ -104,12 +117,13 @@ export class HomeComponent extends React.Component {
               iconStyle={styles.largeIcon}
               style={styles.large}
               onClick={this.createRoom}
-          
+
               style={{ marginBottom: '50px' }}
               >
               <AVVideoCall />
               </IconButton>
-
+            </div>
+                : '' }
             </div>
           </div>
         </div>

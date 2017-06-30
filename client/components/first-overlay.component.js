@@ -64,7 +64,7 @@ export class FirstOverlayComponent extends PureComponent {
             </div>
             <div>
               <div className="text-center" style={[styles.centerText]}>
-              <a href="mailto:name@testtest.com?subject=DAW%20jam%20lesson&body=Join%20ROOM%20{this.props.linkUrl}">EMAIL US THE LINK BELLOW - CLICK HERE</a>
+              <a href="mailto:name@testtest.com?subject=DAW%20jam%20lesson&body=Join%20ROOM%20">EMAIL US THE LINK BELLOW - CLICK HERE</a>
               <br/>
                 {'Then another user will join the room shortly for your lesson.'}
               </div>

@@ -11,8 +11,6 @@ import NotFoundComponent from './components/not-found.component';
 import RoomComponent from './components/room.component';
 import store from './stores/store';
 
-import AppContainer from '../imports/ui/containers/AppContainer.jsx';
-import MainContainer from '../imports/ui/containers/MainContainer.jsx';
 import SignupPage from '../imports/ui/pages/SignupPage.jsx';
 import LoginPage from '../imports/ui/pages/LoginPage.jsx';
 
@@ -36,25 +34,25 @@ const currentRoomSubscription = store.subscribe(() => {
   }
 });
 
-export const renderRoutes = () => (
-  <Router history={browserHistory}>
-    <Route path="login" component={LoginPage}/>
-    <Route path="signup" component={SignupPage}/>
-    <Route path="/" component={AppContainer}>
-      <IndexRoute component={MainContainer}/>
-    </Route>
-  </Router>
-);
+// export const renderRoutes = () => (
+//   <Router history={browserHistory}>
+//     <Route path="login" component={LoginPage}/>
+//     <Route path="signup" component={SignupPage}/>
+//     <Route path="/" component={AppContainer}>
+//       <IndexRoute component={MainContainer}/>
+//     </Route>
+//   </Router>
+// );
 
 // route configuration
 export const routeConfig = [{
   path: '/',
-  component: AppContainer,
-  //component: AppComponent,
+  //component: AppContainer,
+  component: AppComponent,
   indexRoute: {
-    component: MainContainer,
-      //component: (Browser.mobile || Browser.tablet) ?
-        //HomeMobileComponent : HomeComponent,
+    //component: MainContainer,
+      component: (Browser.mobile || Browser.tablet) ?
+        HomeMobileComponent : HomeComponent,
   },
   onEnter: (nextState, replaceState) => {
     analytics.page('home');
