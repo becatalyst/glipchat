@@ -317,7 +317,7 @@ export class HeaderComponent extends Component {
       ];
     }
 
-  
+
     let drawer = '';
 
     if (!!user && mobile) {

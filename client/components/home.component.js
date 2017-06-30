@@ -22,7 +22,7 @@ import LoadingDialogComponent from './loading-dialog.component';
 const styles = {
   css: {
     backgroundAttachment: 'fixed',
-    backgroundImage: 'url(images/quasar.jpg)',
+    // backgroundImage: 'url(images/quasar.jpg)',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -87,7 +87,7 @@ export class HomeComponent extends React.Component {
           <LoadingDialogComponent open title="Starting video call" /> : ''
         }
         <div style={[GlobalStyles.stickyFooterPage]}>
-          <HeaderComponent showMenuIconButton={true} />
+          <HeaderComponent showMenuIconButton={false} />
           <div>
             <div className="col-xs-12 text-center">
               <h1 style={[styles.title.css]}>{"/ DAW jam /"}</h1>

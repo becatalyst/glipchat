@@ -6,12 +6,10 @@ import PropTypes from 'prop-types';
 import * as Actions from '../actions/actions';
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import FlatButton from 'material-ui/FlatButton';
 
 
 const styles = {
   css: {
-
     height: 'inherit',
   },
 };
@@ -87,14 +85,21 @@ export class AppComponent extends React.Component {
       //   {this.props.children}
       // </div>
       <div style={styles.css}>
+        <nav className="navbar navbar-default navbar-static-top">
+          <div className="container">
+            <div className="navbar-header">
+            </div>
+            <div className="navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
-                  <FlatButton
-                    onClick={this.logout}
-                    label="LOGOUT"/>
+                <li>
+                  <a href="#" onClick={this.logout}>Logout</a>
+                </li>
               </ul>
+            </div>
+          </div>
+        </nav>
         {this.props.children}
       </div>
-
     );
   }
 }
