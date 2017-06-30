@@ -36,7 +36,7 @@ export class AppComponent extends React.Component {
 
   componentWillMount(){
     if (!this.state.isAuthenticated) {
-      browserHistory.push('/login');
+      browserHistory.push('/signup');
     }
     console.log("componentWillMount:", Meteor.userId())
   }
