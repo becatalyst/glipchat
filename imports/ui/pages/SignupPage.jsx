@@ -1,6 +1,32 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { Accounts } from 'meteor/accounts-base';
+import Colors from 'material-ui/styles/colors';
+
+const styles = {
+  css: {
+    backgroundAttachment: 'fixed',
+    // backgroundImage: 'url(images/quasar.jpg)',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    color: 'Colors.fullWhite',
+    height: '100%',
+    minHeight: '500px',
+  },
+
+  title: {
+    css: {
+      color: Colors.deepOrange400,
+      fontSize: '144px',
+    },
+  },
+  sloganText:{
+    color: 'grey',
+    textAlign: 'center',
+  }
+
+};
 
 export default class SignupPage extends Component {
   constructor(props){
@@ -33,9 +59,20 @@ export default class SignupPage extends Component {
     return (
       <div className="modal show">
         <div className="modal-dialog">
-          <div className="modal-content">
+
             <div className="modal-header">
-              <h1 className="text-center">Sign up</h1>
+              <h1 style={
+                {color: Colors.deepOrange400,
+                  textAlign: 'center',
+                  fontSize: 100
+                }}>/ DAW jam /</h1>
+
+                <h1 style={styles.sloganText}>
+                    <br /> A new way of learning music
+                    <br /> A new way of earning from music
+                    <br />
+                </h1>
+
             </div>
             <div className="modal-body">
               { error.length > 0 ?
@@ -70,7 +107,7 @@ export default class SignupPage extends Component {
               </form>
             </div>
             <div className="modal-footer" style={{borderTop: 0}}></div>
-          </div>
+
         </div>
       </div>
     );
