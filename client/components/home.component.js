@@ -104,6 +104,7 @@ export class HomeComponent extends React.Component {
         </h1>
             { Meteor.userId() !== null ?
               <div>
+                <div>
               <FlatButton
                 onClick={this.createRoom}
                 label="Call DAW User"
@@ -122,6 +123,7 @@ export class HomeComponent extends React.Component {
               >
               <AVVideoCall />
               </IconButton>
+            </div>
             </div>
                 : '' }
             </div>
