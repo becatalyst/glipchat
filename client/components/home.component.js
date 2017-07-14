@@ -19,6 +19,10 @@ import GlobalStyles from '../styles/global.styles';
 import HeaderComponent from './header.component';
 import LoadingDialogComponent from './loading-dialog.component';
 import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
+import Form from './form.component';
+import { render } from 'react-dom';
+
+
 
 const styles = {
   css: {
@@ -123,7 +127,6 @@ export class HomeComponent extends React.Component {
               <FlatButton
                 onClick={this.createRoom}
                 label="Call DAW User"
-
                 style={{ marginBottom: '10px' }}
               />
 
@@ -138,6 +141,12 @@ export class HomeComponent extends React.Component {
               style={{ marginBottom: '50px' }}
               >
               <AVVideoCall />
+
+              <br />
+
+              <br />
+              <div className="form"><Form /></div>
+              <br />
               </IconButton>
             </div>
             </div>
