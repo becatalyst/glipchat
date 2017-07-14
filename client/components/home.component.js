@@ -19,10 +19,7 @@ import GlobalStyles from '../styles/global.styles';
 import HeaderComponent from './header.component';
 import LoadingDialogComponent from './loading-dialog.component';
 import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
-import Form from './form.component';
-import { render } from 'react-dom';
-
-
+import Mark from './mark.component';
 
 const styles = {
   css: {
@@ -145,9 +142,12 @@ export class HomeComponent extends React.Component {
               <br />
 
               <br />
-              <div className="form"><Form /></div>
+
               <br />
               </IconButton>
+              <br />
+              <Mark />
+              <br />
             </div>
             </div>
                 : '' }
